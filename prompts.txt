@@ -7,3 +7,101 @@ Sample initial prompt, feel free to vary the instructions between "Read brazilia
 
 npx claude-flow@alpha hive-mind spawn "Read brazilian-soccer-mcp-guide.md, implement as described and test using BDD GWT structured PyTest. Use Neo4j. Maintain a detailed context block comment at the start of every code file. Finally update README.md to describe what was done and push everything to github" --claude
 
+$ curl -fsSL https://claude.ai/install.sh | bash
+$ claude --dangerously-skip-permissions
+$ go install github.com/steveyegge/gastown/cmd/gt@latest
+$ export PATH="$PATH:$HOME/go/bin"
+
+Need beads first
+$ curl -fsSL https://raw.githubusercontent.com/steveyegge/beads/main/scripts/install.sh | bash
+
+Install gastown in workspace
+$ gt install . --git
+🏭 Creating Gas Town HQ at /workspaces/2026-01-13-python-gastown
+
+   ✓ Created mayor/
+   ✓ Created mayor/town.json
+   ✓ Created mayor/rigs.json
+   ✓ Created mayor/CLAUDE.md
+   ✓ Created mayor/.claude/settings.json
+   ✓ Created deacon/.claude/settings.json
+
+   ✓ Created .gitignore
+   ✓ Git repository already exists
+   ✓ Installed pre-checkout hook (prevents accidental branch switches)
+   ✓ Initialized .beads/ (town-level beads with hq- prefix)
+   ✓ Provisioned 31 formulas
+   ✓ Created role bead: hq-mayor-role
+   ✓ Created role bead: hq-deacon-role
+   ✓ Created role bead: hq-dog-role
+   ✓ Created role bead: hq-witness-role
+   ✓ Created role bead: hq-refinery-role
+   ✓ Created role bead: hq-polecat-role
+   ✓ Created role bead: hq-crew-role
+   ✓ Created agent bead: hq-mayor
+   ✓ Created agent bead: hq-deacon
+   ✓ Detected overseer: Adrian Cockcroft <adrian.cockcroft@gmail.com> (via git-config)
+   ✓ Created settings/escalation.json
+   ✓ Created .claude/commands/ (slash commands for all agents)
+
+✓ HQ created successfully!
+
+Next steps:
+  1. Add a rig: gt rig add <name> <git-url>
+  2. (Optional) Configure agents: gt config agent list
+  3. Enter the Mayor's office: gt mayor attach
+
+  @adrianco ➜ /workspaces/2026-01-13-python-gastown (main) $ gt rig add bench https://github.com/brazil-bench/2026-01-13-python-gastown
+Creating rig bench...
+  Repository: https://github.com/brazil-bench/2026-01-13-python-gastown
+  Cloning repository (this may take a moment)...
+   ✓ Created shared bare repo
+  Creating mayor clone...
+   ✓ Created mayor clone
+  Initializing beads database...
+   ✓ Initialized beads (prefix: be)
+  Creating refinery worktree...
+   ✓ Created refinery worktree
+  Installing Claude settings...
+   ✓ Installed Claude settings
+  Initializing beads database...
+   ✓ Initialized beads (prefix: be)
+   ✓ Created agent bead: be-bench-witness
+   ✓ Created agent bead: be-bench-refinery
+  Created rig identity bead: be-rig-bench
+
+✓ Rig created in 3.5s
+
+Structure:
+  bench/
+  ├── config.json
+  ├── .repo.git/        (shared bare repo for refinery+polecats)
+  ├── .beads/           (prefix: be)
+  ├── plugins/          (rig-level plugins)
+  ├── mayor/rig/        (clone: main)
+  ├── refinery/rig/     (worktree: main, sees polecat branches)
+  ├── crew/             (empty - add crew with 'gt crew add')
+  ├── witness/
+  └── polecats/
+
+Next steps:
+  gt crew add <name> --rig bench   # Create your personal workspace
+  cd /workspaces/2026-01-13-python-gastown/bench/crew/<name>              # Start working
+@adrianco ➜ /workspaces/2026-01-13-python-gastown (main) $ gt crew add adrian --rig bench
+Creating crew workspace adrian in bench...
+✓ Created crew workspace: bench/adrian
+  Path: /workspaces/2026-01-13-python-gastown/bench/crew/adrian
+  Branch: main
+  Agent bead: be-bench-crew-adrian
+
+✓ Created 1 crew workspace(s): [adrian]
+
+Start working with: cd /workspaces/2026-01-13-python-gastown/bench/crew/adrian
+@adrianco ➜ /workspaces/2026-01-13-python-gastown (main) $ cd /workspaces/2026-01-13-python-gastown/bench/crew/adrian
+@adrianco ➜ .../2026-01-13-python-gastown/bench/crew/adrian (main) $ 
+
+$ sudo apt-get update && sudo apt-get install -y tmux
+
+$ gt mayor attach
+
+Read brazilian-soccer-mcp-guide.md, implement as described and test using BDD GWT structured PyTest, don't use async tests. Use Neo4j. Maintain a detailed context block comment at the start of every code file. Finally update README.md to describe what was done and push everything to github
