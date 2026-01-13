@@ -1,0 +1,78 @@
+# =============================================================================
+# File: pyproject.toml
+# Project: Brazilian Soccer MCP Server
+# Purpose: Python project configuration and build settings
+# Author: Gas Town Agent
+# Created: 2026-01-13
+#
+# Description:
+#     Project metadata and tool configuration for the Brazilian Soccer MCP
+#     Server. Defines dependencies, test settings, and package structure.
+#
+# Usage:
+#     pip install -e .           # Install in development mode
+#     pip install -e ".[dev]"    # Install with dev dependencies
+#     pytest                     # Run tests
+# =============================================================================
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "brazilian-soccer-mcp"
+version = "1.0.0"
+description = "MCP server for Brazilian soccer data with Neo4j graph database"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "Gas Town Agent", email = "agent@gastown.local"}
+]
+keywords = ["mcp", "neo4j", "soccer", "brazil", "football", "graph-database"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Database",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+
+dependencies = [
+    "neo4j>=5.0.0",
+    "mcp>=1.0.0",
+    "pandas>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-bdd>=7.0.0",
+]
+
+[project.scripts]
+brazilian-soccer-mcp = "brazilian_soccer_mcp.server:main"
+
+[project.urls]
+Homepage = "https://github.com/brazil-bench/2026-01-13-python-gastown"
+Repository = "https://github.com/brazil-bench/2026-01-13-python-gastown"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]
+
+[tool.setuptools.package-data]
+"*" = ["*.feature"]

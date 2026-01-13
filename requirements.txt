@@ -1,0 +1,24 @@
+# =============================================================================
+# File: requirements.txt
+# Project: Brazilian Soccer MCP Server
+# Purpose: Python package dependencies for the MCP server with Neo4j backend
+# Author: Gas Town Agent
+# Created: 2026-01-13
+#
+# Dependencies:
+# - neo4j: Graph database driver for storing and querying soccer data
+# - mcp: Model Context Protocol server framework
+# - pandas: Data manipulation for CSV loading
+# - pytest: Testing framework
+# - pytest-bdd: BDD/Gherkin support for PyTest
+#
+# Notes:
+# - Neo4j 5.x driver is used for compatibility with Neo4j 5.15.0
+# - MCP provides the server interface for LLM integration
+# =============================================================================
+
+neo4j>=5.0.0
+mcp>=1.0.0
+pandas>=2.0.0
+pytest>=7.0.0
+pytest-bdd>=7.0.0
