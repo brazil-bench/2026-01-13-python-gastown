@@ -102,6 +102,7 @@ Start working with: cd /workspaces/2026-01-13-python-gastown/bench/crew/adrian
 
 $ sudo apt-get update && sudo apt-get install -y tmux
 
+
 $ gt mayor attach
 
 Read brazilian-soccer-mcp-guide.md, implement as described and test using BDD GWT structured PyTest, don't use async tests. Use Neo4j. Maintain a detailed context block comment at the start of every code file. Finally update README.md to describe what was done and push everything to github
